@@ -21,6 +21,8 @@
 
 // Qt includes
 #include <QDesktopWidget>
+#include <QCloseEvent>
+#include <QTimer>
 
 // Slicer includes
 #include "qSlicerApplication.h"
@@ -135,4 +137,11 @@ void qMuseumInterfaceAppMainWindow::on_HelpAboutMuseumInterfaceAppAction_trigger
   qSlicerAboutDialog about(this);
   about.setLogo(QPixmap(":/Logo.png"));
   about.exec();
+}
+
+void qMuseumInterfaceAppMainWindow::closeEvent(QCloseEvent *event)
+{
+  event->accept();
+  if (event->isAccepted())
+    QTimer::singleShot(0, qApp, SLOT(closeAllWindows()));
 }
