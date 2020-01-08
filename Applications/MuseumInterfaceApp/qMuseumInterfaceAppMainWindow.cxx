@@ -139,9 +139,9 @@ void qMuseumInterfaceAppMainWindow::on_HelpAboutMuseumInterfaceAppAction_trigger
   about.exec();
 }
 
-void qMuseumInterfaceAppMainWindow::closeEvent(QCloseEvent *event)
-{
-  event->accept();
-  if (event->isAccepted())
-    QTimer::singleShot(0, qApp, SLOT(closeAllWindows()));
-}
+ void qMuseumInterfaceAppMainWindow::closeEvent(QCloseEvent *event)
+ {
+   event->accept();
+   if (event->isAccepted())
+     QTimer::singleShot(0, qApp, SLOT(closeAllWindows()));
+ }

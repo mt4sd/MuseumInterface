@@ -8,14 +8,17 @@ Custom version of Slicer for museum exhibition
 Prerequisites
 -------------
 
-* Microsoft Windows 7 or above recommended
+* Operative System:
+    * Microsoft Windows 7 or above recommended
+    * Ubuntu 18.04
+        * Maybe is necessary create the Slicer-build/bin directory 
 
 * Supported Microsoft Visual Studio versions:
     * Visual Studio 2015
 
 * [CMake](http://cmake.org/cmake/resources/software.html), version 3.11 or above
 
-* Qt, version 5.10 or above
+* Qt, version 5.9.8 or above
 
 * [Git](http://git-scm.com/downloads)
 

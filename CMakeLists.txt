@@ -156,7 +156,7 @@ set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
 FetchContent_Populate(${extension_name}
  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
  GIT_REPOSITORY git@alix.iuibs.ulpgc.es:ULPGC.GTMA/mummy_museum.git #Alix just works with ssh, ssl problem with the certificate
- GIT_TAG        v0.1.0
+ GIT_TAG        v0.1.1
  GIT_PROGRESS   1
 )
 list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})

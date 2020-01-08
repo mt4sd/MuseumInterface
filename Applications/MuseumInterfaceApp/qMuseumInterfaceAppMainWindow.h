@@ -36,9 +36,10 @@ public:
 
 public slots:
   void on_HelpAboutMuseumInterfaceAppAction_triggered();
-
+  
 protected:
   qMuseumInterfaceAppMainWindow(qMuseumInterfaceAppMainWindowPrivate* pimpl, QWidget* parent);
+  void closeEvent (QCloseEvent *event) override;
 
 private:
   Q_DECLARE_PRIVATE(qMuseumInterfaceAppMainWindow);
