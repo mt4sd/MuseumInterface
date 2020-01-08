@@ -13,7 +13,6 @@ if(NOT DEFINED slicersources_SOURCE_DIR)
   # Download Slicer sources and set variables slicersources_SOURCE_DIR and slicersources_BINARY_DIR
   FetchContent_Populate(slicersources
     GIT_REPOSITORY git://github.com/Slicer/Slicer
-    # GIT_TAG        ae9dca25eebc73607095ed9295b4dc4019baea07
     GIT_TAG        v4.10.2
     GIT_PROGRESS   1
     )
@@ -143,7 +142,6 @@ set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
 FetchContent_Populate(${extension_name}
  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
  GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/openigtlink/SlicerOpenIGTLink.git
-#  GIT_TAG        2b92f7b1ffe02403109b671f28424e8770e902a0
  GIT_TAG        bf9df8e3c679092c0107a4b3a684cd4f2116ed4d 
  GIT_PROGRESS   1
  QUIET
@@ -158,6 +156,7 @@ FetchContent_Populate(${extension_name}
  GIT_REPOSITORY git@alix.iuibs.ulpgc.es:ULPGC.GTMA/mummy_museum.git #Alix just works with ssh, ssl problem with the certificate
  GIT_TAG        v0.1.1
  GIT_PROGRESS   1
+ QUIET
 )
 list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})
 
