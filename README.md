@@ -33,7 +33,7 @@ Custom version of Slicer for museum exhibition
     * Setup [your git username](https://help.github.com/articles/setting-your-username-in-git) and [your git email](https://help.github.com/articles/setting-your-email-in-git).
 
     * If not already done, email `Abián Hernández <abian.hernandez@ulpgc.es>` to be granted access to
-    the [GTMA/MuseumInterface](https://github.com/GTMA/MuseumInterface) repository.
+    the [GTMA/MuseumInterface](https://alix.iuibs.ulpgc.es/ULPGC.GTMA/MuseumInterface) repository.
 
 # Checkout
 
@@ -57,21 +57,23 @@ Note: The build process will take approximately 3 hours.
 
 <b>Option 1: CMake GUI and Visual Studio (Recommended)</b>
 
-1. Start [CMake GUI](https://cmake.org/runningcmake/), select source directory `C:\W\MuseumInterface` and set build directory to `C:\W\MuseumInterface-rel`.
+1. Start [CMake GUI](https://cmake.org/runningcmake/), select source directory `C:\W\MuseumInterface` and set build directory to `C:\W\Build`.
 2. Add an entry `Qt5_DIR` pointing to:
     * `[Qt Location]\[Qt Version]\[MSVC Version]\lib\cmake\Qt5\`.
-2. Generate the project.
-3. Open the  project using the ***Open Project* button** in CMake, select `Release` and build the project.
+3. Generate the project.
+4. Open the  project using the ***Open Project* button** in CMake, select `Release` and build the project.
+
+**Note**: It is mandatory to use CMake macros of Git that are located in `[Git location]\usr\bin`. This path should be included in `Windows PATH Variable`.     
 
 <b>Option 2: Command Line</b>
 
 1. Start the [Command Line Prompt](http://windows.microsoft.com/en-us/windows/command-prompt-faq)
-2. Configure and build the project in `C:\W\MuseumInterface-rel` by typing the following commands:
+2. Configure and build the project in `C:\W\Build` by typing the following commands:
 
 ```bat
 cd C:\W\
-mkdir MuseumInterface-rel
-cd MuseumInterface-rel
+mkdir Build
+cd Build
 cmake -G "Visual Studio 14 2015 Win64" -DQt5_DIR=[Qt Location]\[Qt Version]\[MSVC Version]\lib\cmake\Qt5\ ..\MuseumInterface
 cmake --build . --config Release
 ```
