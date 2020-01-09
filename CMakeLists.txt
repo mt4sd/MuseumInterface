@@ -160,6 +160,5 @@ FetchContent_Populate(${extension_name}
 )
 list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})
 
-
 # Add Slicer sources
 add_subdirectory(${slicersources_SOURCE_DIR} ${slicersources_BINARY_DIR})

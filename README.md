@@ -9,8 +9,7 @@ Custom version of Slicer for museum exhibition
 
 * **Operating System**:
     * Microsoft Windows 7 or above recommended
-    * Ubuntu 18.04
-        * Maybe is necessary create the Slicer-build/bin directory 
+    * Ubuntu 18.04 
 
 * **Tested Microsoft Visual Studio versions**:
     * Visual Studio 2015
@@ -63,7 +62,9 @@ Note: The build process will take approximately 3 hours.
 3. Generate the project.
 4. Open the  project using the ***Open Project* button** in CMake, select `Release` and build the project.
 
-**Note**: It is mandatory to use CMake macros of Git that are located in `[Git location]\usr\bin`. This path should be included in `Windows PATH Variable`.     
+**Note**: It is mandatory to use CMake macros of Git that are located in `[Git location]\usr\bin`. This path should be included in `Windows PATH Variable`.
+
+**Warning**: Sometimes is necessary create the `Slicer-build/bin` directory because it is not created in Building time.
 
 <b>Option 2: Command Line</b>
 
