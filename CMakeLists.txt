@@ -153,7 +153,7 @@ set(extension_name "MummyMuseum")
 set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
 FetchContent_Populate(${extension_name}
  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
- GIT_REPOSITORY git@alix.iuibs.ulpgc.es:ULPGC.GTMA/mummy_museum.git #Alix just works with ssh, ssl problem with the certificate
+ GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/SolidusAbi/MummyMuseum.git #Alix just works with ssh, ssl problem with the certificate
  GIT_TAG        v0.1.1
  GIT_PROGRESS   1
  QUIET

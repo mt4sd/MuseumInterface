@@ -23,6 +23,7 @@
 #include <QDesktopWidget>
 #include <QCloseEvent>
 #include <QTimer>
+#include <QFile>
 
 // Slicer includes
 #include "qSlicerApplication.h"
@@ -79,10 +80,11 @@ void qMuseumInterfaceAppMainWindowPrivate::setupUi(QMainWindow * mainWindow)
   logo.setDevicePixelRatio(dpr);
 #endif
   this->LogoLabel->setPixmap(logo);
+  this->LogoLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
 
   // Hide the toolbars
   this->MainToolBar->setVisible(false);
-  //this->ModuleSelectorToolBar->setVisible(false);
+  this->ModuleSelectorToolBar->setVisible(false);
   this->ModuleToolBar->setVisible(false);
   this->ViewToolBar->setVisible(false);
   this->MouseModeToolBar->setVisible(false);

@@ -68,9 +68,9 @@ QPalette qAppStyle::standardPalette()const
 
 
   palette.setColor(QPalette::Light, "#ffffff");
-  palette.setColor(QPalette::Button, "#dedfe1");
-  palette.setColor(QPalette::Mid, "#005f9e");
-  palette.setColor(QPalette::Dark, "#005f9e");
+  palette.setColor(QPalette::Button, "#638d2e");
+  palette.setColor(QPalette::Mid, "#638d2e");
+  palette.setColor(QPalette::Dark, "#638d2e");
   palette.setColor(QPalette::Active, QPalette::ButtonText, "#005f9e");
   palette.setColor(QPalette::Inactive, QPalette::ButtonText, "#005f9e");
   palette.setColor(QPalette::Disabled, QPalette::ButtonText, "#003050");
