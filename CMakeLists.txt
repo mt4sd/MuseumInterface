@@ -13,7 +13,8 @@ if(NOT DEFINED slicersources_SOURCE_DIR)
   # Download Slicer sources and set variables slicersources_SOURCE_DIR and slicersources_BINARY_DIR
   FetchContent_Populate(slicersources
     GIT_REPOSITORY git://github.com/Slicer/Slicer
-    GIT_TAG        v4.10.2
+#    GIT_TAG        v4.10.2
+    GIT_TAG        74cc10c3ef179f253fc7ad886d472d4c2da579ff
     GIT_PROGRESS   1
     )
 else()
@@ -97,6 +98,7 @@ option(Slicer_BUILD_BRAINSTOOLS                 "Build application with BRAINSTo
 option(Slicer_BUILD_DataStore                   "Build application with DataStore module"             OFF)
 option(Slicer_BUILD_CompareVolumes              "Build application with ChangeTrackerPy module"       OFF)
 option(Slicer_BUILD_LandmarkRegistration        "Build application with LandmarkRegistration module"  OFF)
+option(Slicer_BUILD_SurfaceToolbox              "Build application with SurfaceToolbox module"        OFF)
 
 # Enable Slicer built-in modules
 set(Slicer_CLIMODULES_ENABLED
@@ -123,7 +125,6 @@ set(Slicer_QTSCRIPTEDMODULES_DISABLED
   LabelStatistics
   PerformanceTests
   SampleData
-  SurfaceToolbox
   VectorToScalarVolume
   )
 
@@ -137,24 +138,36 @@ set(Slicer_EXTENSION_SOURCE_DIRS
 # Add remote extension source directories
 
 # SlicerOpenIGTLink
-set(extension_name "SlicerOpenIGTLink")
-set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
-FetchContent_Populate(${extension_name}
- SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
- GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/openigtlink/SlicerOpenIGTLink.git
- GIT_TAG        bf9df8e3c679092c0107a4b3a684cd4f2116ed4d 
- GIT_PROGRESS   1
- QUIET
- )
-list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})
+# set(extension_name "SlicerOpenIGTLink")
+# set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
+# FetchContent_Populate(${extension_name}
+#  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
+#  GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/openigtlink/SlicerOpenIGTLink.git
+#  GIT_TAG        bf9df8e3c679092c0107a4b3a684cd4f2116ed4d 
+#  GIT_PROGRESS   1
+#  QUIET
+#  )
+# list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})
 
 # MummyMuseum
 set(extension_name "MummyMuseum")
 set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
 FetchContent_Populate(${extension_name}
  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
- GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/SolidusAbi/MummyMuseum.git #Alix just works with ssh, ssl problem with the certificate
+ GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/SolidusAbi/MummyMuseum.git
  GIT_TAG        v0.1.1
+ GIT_PROGRESS   1
+ QUIET
+)
+list(APPEND Slicer_EXTENSION_SOURCE_DIRS ${${extension_name}_SOURCE_DIR})
+
+# SlicerVirtualReality
+set(extension_name "SlicerVirtualReality")
+set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
+FetchContent_Populate(${extension_name}
+ SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
+ GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/KitwareMedical/SlicerVirtualReality.git
+ GIT_TAG        0e97cd81a3650333aea8bb34513d33679fa67311
  GIT_PROGRESS   1
  QUIET
 )
