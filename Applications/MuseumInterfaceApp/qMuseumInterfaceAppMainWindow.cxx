@@ -100,9 +100,10 @@ void qMuseumInterfaceAppMainWindowPrivate::setupUi(QMainWindow * mainWindow)
   this->LayoutMenu->setVisible(false);
   this->HelpMenu->setVisible(false);
 
-  // Hide the modules panel
+  // Modules panel
   //this->PanelDockWidget->setVisible(false);
   this->PanelDockWidget->setFeatures(QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
+  this->PanelDockWidget->setMaximumWidth(381);
   this->DataProbeCollapsibleWidget->setCollapsed(true);
   this->DataProbeCollapsibleWidget->setVisible(false);
   this->StatusBar->setVisible(false);
