@@ -50,7 +50,7 @@ Note: **in Windows**, use short source and build directory names to avoid the [m
 
 # Build
 
-Note: The build process will take approximately 3 hours.
+Note: The build process will take approximately 3 hours. This time can be significantly reduced using Ninja build system but the paths presented in the following chapters can be different.
 
 ## Building on Windows:
 
@@ -79,13 +79,47 @@ cmake -G "Visual Studio 14 2015 Win64" -DQt5_DIR=[Qt Location]\[Qt Version]\[MSV
 cmake --build . --config Release
 ```
 
+# Developing
+**If you are developing on Windows**, it is necessary to locate the library `vtkRenderingOpenVR-8.2.dll` located on `C:\W\bin\Release` in order to be able to load the necessary modules. You can do one of the following solutions:
+
+**Option 1: Modified the launcher settings.**
+
+Slicer contains a *.ini* file which is used to indicate the launcher settings, `MuseumInterfaceLauncherSettings.ini`. This file is located on `C:\W\Build\Slicer-build\`.
+
+This file is a text which can be modified using any text editor. This file contains a field called `[LibraryPaths]` where, as the name suggests, the libraries directories are located. In this field we need to add the path where is located the `vtkRenderingOpenVR-8.2.dll` file.
+
+
+```bat
+[LibraryPaths]
+1\path=<APPLAUNCHER_SETTINGS_DIR>/bin/Release
+.
+.
+.
+19\path=C:/W/Build/OpenVR/bin/win64/
+20\path=E:/W/Build/bin/Release
+size=20
+```
+
+    
+**Option 2: copy the library in a accessible directory.**
+
+For this options, we recommend to copy the file `C:\W\Build\bin\Release\vtkRenderingOpenVR-8.2.dll` in `C:\W\Build\Slicer-build\lib\[Application Name]\qt-loadable-modules\Release\` directory.
+
+In order to avoid any problem, it is recommennded to copy the OpenVR library too, `C:\W\Build\OpenVR\bin\win64\openvr_api.dll`
+
+```bat
+$ copy C:\W\Build\bin\Release\vtkRenderingOpenVR-8.2.dll C:\W\Build\Slicer-build\lib\MuseumInterface-4.11\qt-loadable-modules\Release\
+
+$ copy C:\W\Build\OpenVR\bin\win64\openvr_api.dll C:\W\Build\Slicer-build\lib\MuseumInterface-4.11\qt-loadable-modules\Release\
+```
+
 # Package
 
 Install [NSIS 2](http://sourceforge.net/projects/nsis/files/)
 
 <b>Option 1: CMake and Visual Studio (Recommended)</b>
 
-1. In the `C:\W\MuseumInterface-rel\Slicer-build` directory, open `Slicer.sln` and build the `PACKAGE` target
+1. In the `C:\W\Build\Slicer-build` directory, open `Slicer.sln` and build the `PACKAGE` target
 
 <b>Option 2: Command Line</b>
 
@@ -93,7 +127,7 @@ Install [NSIS 2](http://sourceforge.net/projects/nsis/files/)
 2. Build the `PACKAGE` target by typing the following commands:
 
 ```bat
-cd C:\W\MuseumInterface-rel\Slicer-build
+cd C:\W\Build\Slicer-build
 cmake --build . --config Release --target PACKAGE
 ```
 
