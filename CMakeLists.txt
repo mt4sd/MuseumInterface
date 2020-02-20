@@ -154,7 +154,7 @@ set(${extension_name}_SOURCE_DIR "${CMAKE_BINARY_DIR}/${extension_name}")
 FetchContent_Populate(${extension_name}
  SOURCE_DIR     ${${extension_name}_SOURCE_DIR}
  GIT_REPOSITORY ${EP_GIT_PROTOCOL}://github.com/mt4sd/MummyMuseum.git
- GIT_TAG        c638355c2dd76afeac363953416c8af93c46d307
+ GIT_TAG        606efdeaaa19c6537efc2dc5ed040147e805255b
  GIT_PROGRESS   1
  QUIET
 )
