@@ -18,9 +18,14 @@ Custom version of Slicer for museum exhibition
     * [CMake](http://cmake.org/cmake/resources/software.html)
         * Version 3.11 or above
     * [Qt](https://www.qt.io/download)
-        * Version 5.9.8 or above
+        * Version 5.9.9 or above
     * [Git](http://git-scm.com/downloads)
     * [Subversion](http://www.sliksvn.com/en/download)
+
+* **Optional:**
+    * [SteamVR](https://store.steampowered.com/app/250820/SteamVR/)
+        * If you are interesting in Virtual Reality (VR) capability
+            
 
 * **Setting up your git account**:
 
@@ -54,7 +59,7 @@ Note: The build process will take approximately 3 hours. This time can be signif
 
 ## Building on Windows:
 
-<b>Option 1: CMake GUI and Visual Studio (Recommended)</b>
+**Option 1: CMake GUI and Visual Studio (Recommended)**
 
 1. Start [CMake GUI](https://cmake.org/runningcmake/), select source directory `C:\W\MuseumInterface` and set build directory to `C:\W\Build`.
 2. Add an entry `Qt5_DIR` pointing to:
@@ -66,7 +71,7 @@ Note: The build process will take approximately 3 hours. This time can be signif
 
 **Warning**: Sometimes is necessary create the `Slicer-build/bin` directory because it is not created in Building time.
 
-<b>Option 2: Command Line</b>
+**Option 2: Command Line**
 
 1. Start the [Command Line Prompt](http://windows.microsoft.com/en-us/windows/command-prompt-faq)
 2. Configure and build the project in `C:\W\Build` by typing the following commands:
@@ -117,11 +122,11 @@ $ copy C:\W\Build\OpenVR\bin\win64\openvr_api.dll C:\W\Build\Slicer-build\lib\Mu
 
 Install [NSIS 2](http://sourceforge.net/projects/nsis/files/)
 
-<b>Option 1: CMake and Visual Studio (Recommended)</b>
+**Option 1: CMake and Visual Studio (Recommended)**
 
 1. In the `C:\W\Build\Slicer-build` directory, open `Slicer.sln` and build the `PACKAGE` target
 
-<b>Option 2: Command Line</b>
+**Option 2: Command Line**
 
 1. Start the [Command Line Prompt](http://windows.microsoft.com/en-us/windows/command-prompt-faq)
 2. Build the `PACKAGE` target by typing the following commands:

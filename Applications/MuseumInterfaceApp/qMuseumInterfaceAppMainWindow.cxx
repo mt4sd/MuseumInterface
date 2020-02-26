@@ -26,10 +26,15 @@
 #include <QFile>
 
 // Slicer includes
+#include "qMRMLThreeDWidget.h"
+#include "qMRMLThreeDViewControllerWidget.h"
 #include "qSlicerApplication.h"
+#include "qSlicerLayoutManager.h"
 #include "qSlicerAboutDialog.h"
 #include "qSlicerMainWindow_p.h"
 #include "qSlicerModuleSelectorToolBar.h"
+#include "vtkMRMLViewNode.h"
+#include "vtkMRMLLayoutNode.h"
 
 //-----------------------------------------------------------------------------
 // qMuseumInterfaceAppMainWindowPrivate methods
@@ -118,6 +123,14 @@ qMuseumInterfaceAppMainWindow::qMuseumInterfaceAppMainWindow(QWidget* windowPare
 {
   Q_D(qMuseumInterfaceAppMainWindow);
   d->init();
+
+  // Layout manager
+  d->LayoutManager->setLayout(vtkMRMLLayoutNode::SlicerLayoutOneUp3DView);
+  d->LayoutManager->threeDWidget(0)->threeDController()->setVisible(false);
+  d->LayoutManager->threeDWidget(0)->mrmlViewNode()->SetBackgroundColor(0.05, 0.05, 0.05);
+  d->LayoutManager->threeDWidget(0)->mrmlViewNode()->SetBackgroundColor2(0.36, 0.25, 0.2);
+  d->LayoutManager->threeDWidget(0)->mrmlViewNode()->SetBoxVisible(false);
+
   showFullScreen();
 }
 
